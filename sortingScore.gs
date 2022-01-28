@@ -24,7 +24,6 @@ function sortingScore(hours, dueDate, priority, done) {
   {
     //0-10
     finalScore+=(20*hours);
-    
   }
   else if(hours<=1)
   {
@@ -79,12 +78,16 @@ function sortingScore(hours, dueDate, priority, done) {
   }
   /**
    * Priority
+   * -If "optional" x.5
    * -If "!" x1.5
    * -If "!!" x2.0
    * -If "!!!" X3.0
    */
   switch(priority)
   {
+    case"optional":
+    finalScore/=2;
+    break;
     case "!":
     finalScore*=1.5;
     break;
